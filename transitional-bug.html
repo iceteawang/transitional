@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小虫</title>
+    <style type="text/css">
+        div{
+            width:50px;
+            height:30px;
+            position:absolute;  
+            background:blue;
+            border-radius:15px;
+            text-align:center; 
+            box-shadow:5px 5px 5px black; 
+                        
+        }
+        body{
+            background:#66CDAA;
+        }
+    </style>
+</head>
+<body>
+    
+    <div style="left:0px;top:0px"></div>
+    <div style="left:0px;top:0px"></div>
+    <div style="left:0px;top:0px;"></div>
+    <div style="left:0px;top:0px"></div>
+    <div style="left:0px;top:0px"></div>
+    <div style="left:0px;top:0px;"></div>
+    <div style="left:0px;top:0px"></div>
+    <div style="left:0px;top:0px"></div>
+    <div style="left:0px;top:0px"></div>
+    <div style="left:0px;top:0px"></div>
+    <div style="left:0px;top:0px;"></div>
+    <div style="left:0px;top:0px"></div>
+    <div style="left:0px;top:0px">Jack</div>
+   
+    <script type="text/javascript">
+
+        var divs = document.getElementsByTagName('div');
+
+        document.onmousemove = function (e) {
+        
+            //获取到鼠标移动的横坐标
+            var x = e.clientX;
+
+            var y = e.clientY;
+
+            // document.title= x+":"+y;
+
+            var num = -1;
+            
+            var timmer = setInterval(function () {
+            
+                num ++;
+
+                if (num == divs.length - 1) {
+
+                    clearInterval(timmer);
+                }
+
+                divs[num].style.left =  x - 15 + 'px';
+
+                divs[num].style.top =  y - 15 + 'px';
+
+                divs[0].style.background = 'black';
+
+                divs[divs.length - 1].style.background = 'white';
+
+                divs[num].style.border = 'solid 2px #000080';
+
+            },60);
+        }
+
+        
+    </script>
+</body>
+</html>
